@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'user creates an Idea', type: :feature do
-  # include WaitForAjax
+  include WaitForAjax
 
   it 'saves new idea to database on click', js: true do
     visit '/'

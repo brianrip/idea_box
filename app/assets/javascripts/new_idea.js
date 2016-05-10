@@ -23,3 +23,13 @@ var createIdea = function (title, body) {
 
   });
 }
+
+var displayIdea = function() {
+  $.ajax ({
+    type: 'GET',
+    url: '/api/v1/ideas',
+    success: function(ideas) {
+      ideas
+    }
+  })
+}

@@ -25,6 +25,15 @@
         1,
         null
       ],
+      "/Users/brianrippeto/Turing/4module/projects/idea_box/app/models/idea.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/v1/ideas_controller.rb": [
         1,
         1,
@@ -41,16 +50,12 @@
         null,
         null
       ],
-      "/Users/brianrippeto/Turing/4module/projects/idea_box/app/models/idea.rb": [
-        1,
-        null
-      ],
       "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/api_controller.rb": [
         0,
         0,
         0
       ]
     },
-    "timestamp": 1462904684
+    "timestamp": 1462906701
   }
 }

@@ -10,8 +10,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'figaro'
-gem 'faraday'
 gem 'responders'
 gem 'selenium-webdriver'
 
@@ -30,6 +28,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'teaspoon'
+  gem 'teaspoon-mocha'
 end
 
 group :development do

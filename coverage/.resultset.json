@@ -52,6 +52,10 @@
         null,
         1,
         null,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/api_controller.rb": [
@@ -60,6 +64,6 @@
         0
       ]
     },
-    "timestamp": 1462937615
+    "timestamp": 1462986838
   }
 }

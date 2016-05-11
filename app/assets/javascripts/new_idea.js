@@ -51,8 +51,10 @@ var prependIdea = function(idea) {
 
 var ideaObject = function(idea) {
   // console.log('print object');
-  return "<div class='idea' id='idea_" + idea.id + "'>" +
+  return "<div class='idea' data-id=" + idea.id + ">" +
          "<h4 class='inline-title'>" + idea.title + "</h4>" +
-         "<p class='idea-body'>" + idea.body.substring(0, 100) + "</p>" + "</div>" +
-         "<p class='inline-right' 'quality'>" + idea.quality + "</p>" + "<hr>";
+         "<div class='delete_idea btn btn-primary'>X</div>" +
+         "<p class='idea-body'>" + idea.body.substring(0, 100) + "</p>"  +
+         "<p class='inline-right' 'quality'>" + idea.quality + "</p>" + "</div>"
+         +"<hr>";
 }

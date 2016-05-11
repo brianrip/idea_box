@@ -3,26 +3,20 @@ $ (document).ready(function() {
 });
 
 function deleteIdea() {
-  $ ('.delete_idea').on('click', function() {
-    console.log('delete');
-    var deletedIdea = $(this).closest('.idea');
-    var deletedIdeaId = deletedIdea.attr('data-id');
-    // displayIdeas();
-    deleteIdea(deleteIdea, deletedIdeaId);
-    });
+  $ ('.ideas').delegate('.delete_idea', 'click', function() {
 
-  var deleteIdea = function (idea, id) {
+    var deletedIdea = $(this).closest('.idea');
+
     $.ajax ({
       type: 'DELETE',
-      url: '/api/v1/ideas/' + id,
+      url: '/api/v1/ideas/' + deletedIdea.attr("data-id"),
 
-      success: function(idea) {
-        console.log('ajax hit');
-        idea.remove()
+      success: function() {
+        deletedIdea.remove();
       },
       error: function(error) {
-      console.log(error.responseText);
+        console.log(error.responseText);
       }
     });
-  };
+  });
 }

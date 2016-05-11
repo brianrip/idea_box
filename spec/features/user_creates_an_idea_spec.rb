@@ -15,9 +15,14 @@ RSpec.feature 'user creates an Idea', type: :feature do
   end
 
   it 'displays new idea on page', js: true do
-    create(:idea, title: "Canyons", body: "go canyoneering in Bryce, UT")
+    visit '/'
+    fill_in 'Title', with: "Canyons"
+    fill_in 'Body', with: "go canyoneering in Bryce, UT"
+    click_on 'saveworthy'
+
+    sleep 1
 
     expect(page).to have_content("Canyons")
-    expect(page).to have_content("go canyoneering in Bryce, UT")    
+    expect(page).to have_content("go canyoneering in Bryce, UT")
   end
 end

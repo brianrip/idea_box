@@ -3,7 +3,7 @@ $ (document).ready(function() {
 
   $ ('#create_idea').on('click', function() {
     createIdea($('#title').val(), $('#body').val());
-    clearField($('#title').val(''), $('#body').val(''));
+    ($('#title').val(''), $('#body').val(''));
 
     displayIdeas();
   });
@@ -33,28 +33,28 @@ var displayIdeas = function() {
     type: 'GET',
     url: '/api/v1/ideas',
     success: function(ideas) {
-      $.each(ideas, function(index, idea) {
-        prependIdea(idea);
-      });    }
+      getIdeas(ideas);
+    }
   });
 };
 
-// var getIdeas = function(ideas) {
-//   $.each(ideas, function(index, idea) {
-//     prependIdea(idea);
-//   });
-// };
+var getIdeas = function(ideas) {
+  $.each(ideas, function(index, idea) {
+      // console.log("hello");
+    prependIdea(idea);
+  });
+};
 
 var prependIdea = function(idea) {
   $('.ideas').prepend(ideaObject(idea));
 };
 
 var ideaObject = function(idea) {
-  return "<div class='idea' data-id=" + idea.id + ">" +
+  return "<div class='idea'><div class='idea-content' data-id=" + idea.id + ">" +
          "<h4 class='idea-title'>" + idea.title + "</h4>" +
          "<div class='delete_idea btn btn-danger'>X</div>" +
          "<p class='idea-body'>" + idea.body.substring(0, 100) + "</p>"  +
          "<div class='upvote btn btn-default'>Upvote</div>" +
-         "<p class='quality'>" + idea.quality + "</p>" +
-         "<div class='downvote btn btn-default'>Downvote</div>" + "</div>" + "<hr>";
+         "<h4 class='quality'>" + idea.quality + "</h4>" +
+         "<div class='downvote btn btn-default'>Downvote</div>" + "</div></div>" + "<hr>";
 };

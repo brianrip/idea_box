@@ -5,8 +5,7 @@ $ (document).ready(function(){
 
 function editTitle() {
   $ ('.ideas').delegate('.idea-title', 'click', function() {
-    var id = $(this).closest('.idea').attr('data-id');
-    console.log(id);
+    var id = $(this).closest('.idea-content').attr('data-id');
     $(this).attr('contentEditable', 'true');
     $(this).keypress(function(e) {
       if (e.which === 13) {
@@ -19,14 +18,15 @@ function editTitle() {
 
 function editBody() {
   $ ('.ideas').delegate('.idea-body', 'click', function() {
-    $(this).attr('contentEditable', 'true')
+    var id = $(this).closest('.idea-content').attr('data-id');
+    $(this).attr('contentEditable', 'true');
     $(this).keypress(function(e) {
       if (e.which === 13) {
-        changeContent(this, {body: $(this).closest('.idea-body').text()})
+        changeContent(this, {body: $(this).closest('.idea-body').text()}, id);
         e.preventDefault();
       }
-    })
-  })
+    });
+  });
 }
 
 function changeContent(titleOrBody, updatedInfo, id) {
@@ -39,7 +39,6 @@ function changeContent(titleOrBody, updatedInfo, id) {
         body: updatedInfo.body
       }
     },
-    dataType: "json",
     success: function() {
       console.log('edited');
     }

@@ -5,7 +5,7 @@ $ (document).ready(function() {
 function deleteIdea() {
   $ ('.ideas').delegate('.delete_idea', 'click', function() {
 
-    var deletedIdea = $(this).closest('.idea');
+    var deletedIdea = $(this).closest('.idea-content');
 
     $.ajax ({
       type: 'DELETE',

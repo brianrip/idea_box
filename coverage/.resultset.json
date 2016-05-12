@@ -25,30 +25,6 @@
         1,
         null
       ],
-      "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/v1/ideas_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
       "/Users/brianrippeto/Turing/4module/projects/idea_box/app/models/idea.rb": [
         1,
         1,
@@ -62,12 +38,44 @@
         null,
         null
       ],
+      "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/v1/ideas_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        null
+      ],
       "/Users/brianrippeto/Turing/4module/projects/idea_box/app/controllers/api/api_controller.rb": [
         0,
         0,
         0
       ]
     },
-    "timestamp": 1463004376
+    "timestamp": 1463039894
   }
 }

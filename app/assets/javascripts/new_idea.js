@@ -40,7 +40,6 @@ var displayIdeas = function() {
 
 var getIdeas = function(ideas) {
   $.each(ideas, function(index, idea) {
-      // console.log("hello");
     prependIdea(idea);
   });
 };

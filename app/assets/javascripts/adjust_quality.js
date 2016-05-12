@@ -10,7 +10,7 @@ function upvoteIdea() {
     var ideaId = idea.attr('data-id')
     var currentQuality = idea.find('.quality').text()
     var newQuality = upVotedQuality(currentQuality)
-    updateQuality(ideaId, currentQuality, newQuality)
+    updateQuality(ideaId, currentQuality, newQuality, idea)
     // console.log(currentQuality);
 
   });
@@ -23,9 +23,7 @@ function downvoteIdea() {
     var ideaId = idea.attr('data-id')
     var currentQuality = idea.find('.quality').text()
     var newQuality = downVotedQuality(currentQuality)
-    updateQuality(ideaId, currentQuality, newQuality)
-    // console.log(currentQuality);
-
+    updateQuality(ideaId, currentQuality, newQuality, idea)
   });
 }
 
@@ -49,17 +47,14 @@ function downVotedQuality(currentQuality) {
   }
 }
 
-function updateQuality(id, currentQuality, newQuality){
-  console.log(newQuality);
+function updateQuality(id, currentQuality, newQuality, idea){
   $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + id,
     data: { quality: newQuality
     },
-    dataType: "json",
-    success: function(data) {
-      console.log('success');
-      $(".idea[data-id='2']").find('.quality').text().replace(currentQuality, newQuality)
+    success: function() {
+      idea.find('.quality').text(newQuality);
     },
     error: function(error) {
       console.log(error.responseText);

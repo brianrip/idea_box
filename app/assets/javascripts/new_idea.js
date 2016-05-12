@@ -53,8 +53,10 @@ var ideaObject = function(idea) {
   // console.log('print object');
   return "<div class='idea' data-id=" + idea.id + ">" +
          "<h4 class='inline-title'>" + idea.title + "</h4>" +
-         "<div class='delete_idea btn btn-primary'>X</div>" +
+         "<div class='delete_idea btn btn-danger'>X</div>" +
          "<p class='idea-body'>" + idea.body.substring(0, 100) + "</p>"  +
-         "<p class='inline-right' 'quality'>" + idea.quality + "</p>" + "</div>"
-         +"<hr>";
+         "<div class='upvote btn btn-default'>Upvote</div>" +
+         "<p class='quality'>" + idea.quality + "</p>" +
+         "<div class='downvote btn btn-default'>Downvote</div>" + "</div>"
+         + "<hr>";
 }

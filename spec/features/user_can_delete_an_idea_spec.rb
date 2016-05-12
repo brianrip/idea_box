@@ -8,7 +8,7 @@ RSpec.feature 'user deletes an idea', type: :feature do
 
     fill_in 'Title', with: "Delete"
     fill_in 'Body', with: "Me"
-
+ 
     click_on "saveworthy"
 
     expect(page).to have_content "Delete"

@@ -7,10 +7,10 @@ function upvoteIdea() {
   $('.ideas').delegate('.upvote', 'click', function () {
 
     var idea = $(this).closest('.idea');
-    var ideaId = idea.attr('data-id')
-    var currentQuality = idea.find('.quality').text()
-    var newQuality = upVotedQuality(currentQuality)
-    updateQuality(ideaId, currentQuality, newQuality, idea)
+    var ideaId = idea.attr('data-id');
+    var currentQuality = idea.find('.quality').text();
+    var newQuality = upVotedQuality(currentQuality);
+    updateQuality(ideaId, currentQuality, newQuality, idea);
     // console.log(currentQuality);
 
   });
@@ -20,30 +20,30 @@ function downvoteIdea() {
   $('.ideas').delegate('.downvote', 'click', function () {
 
     var idea = $(this).closest('.idea');
-    var ideaId = idea.attr('data-id')
-    var currentQuality = idea.find('.quality').text()
-    var newQuality = downVotedQuality(currentQuality)
-    updateQuality(ideaId, currentQuality, newQuality, idea)
+    var ideaId = idea.attr('data-id');
+    var currentQuality = idea.find('.quality').text();
+    var newQuality = downVotedQuality(currentQuality);
+    updateQuality(ideaId, currentQuality, newQuality, idea);
   });
 }
 
 function upVotedQuality(currentQuality) {
   if (currentQuality === "potential") {
-    return "tangible"
+    return "tangible";
   } else if (currentQuality === "tangible") {
-    return "executable"
+    return "executable";
   } else if (currentQuality === "executable") {
-    return "executable"
+    return "executable";
   }
 }
 
 function downVotedQuality(currentQuality) {
   if (currentQuality === "potential") {
-    return "potential"
+    return "potential";
   } else if (currentQuality === "tangible") {
-    return "potential"
+    return "potential";
   } else if (currentQuality === "executable") {
-    return "tangible"
+    return "tangible";
   }
 }
 

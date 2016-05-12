@@ -14,7 +14,11 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def update
-    respond_with Idea.update(params[:id], quality: params[:quality]), location: nil
+    if params[:quality]
+      respond_with Idea.update(params[:id], quality: params[:quality]), location: nil
+    else
+      respond_with Idea.update(params[:id], idea_params), location: nil
+    end
   end
 
   private

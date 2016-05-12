@@ -1,20 +1,20 @@
 $ (document).ready(function(){
-  editTitle()
-  editBody()
-})
+  editTitle();
+  editBody();
+});
 
 function editTitle() {
   $ ('.ideas').delegate('.idea-title', 'click', function() {
-    var id = $(this).closest('.idea').attr('data-id')
+    var id = $(this).closest('.idea').attr('data-id');
     console.log(id);
-    $(this).attr('contentEditable', 'true')
+    $(this).attr('contentEditable', 'true');
     $(this).keypress(function(e) {
       if (e.which === 13) {
-        changeContent(this, {title: $(this).closest('.idea-title').text()}, id)
+        changeContent(this, {title: $(this).closest('.idea-title').text()}, id);
         e.preventDefault();
       }
-    })
-  })
+    });
+  });
 }
 
 function editBody() {
